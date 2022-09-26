@@ -25,6 +25,7 @@ import Orders from '../components/Orders';
 import {getAuth, onAuthStateChanged, signOut} from 'firebase/auth'
 import { useRouter } from 'next/router';
 import { Button } from '@mui/material';
+import CardRoom from '../components/Card';
 
 function Copyright(props) {
   return (
@@ -197,32 +198,22 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
               <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Deposits />
-                </Paper>
+                <CardRoom />
               </Grid>
-              {/* Recent Orders */}
+
+              <Grid item xs={12} md={4} lg={3}>
+                <CardRoom />
+              </Grid>
+
+              <Grid item xs={12} md={4} lg={3}>
+                <CardRoom />
+              </Grid>
+
+              <Grid item xs={12} md={4} lg={3}>
+                <CardRoom />
+              </Grid>
+
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <Orders />
